@@ -1,11 +1,33 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+@theme {
+    /* LIGHT MODE */
+    --color-quiz-light-button: #ffe392;
+    --color-quiz-light-button-hover: #fedb24;
+    --color-quiz-light-primary: #fef4e4;
+    --color-quiz-light-base: #fefaef;
+    --color-quiz-light-text: #577482;
+    /* DARK MODE */
+    --color-quiz-dark-button: #94b4c1;
+    --color-quiz-dark-button-hover: #419cc1;
+    --color-quiz-dark-primary: #547792;
+    --color-quiz-dark-base: #213448;
+    --color-quiz-dark-base-2: #1e2a47;
+    --color-quiz-dark-text: #ecefca;
+
+    --color-information-prompt: rgba(0, 0, 0, 0.358);
 }
