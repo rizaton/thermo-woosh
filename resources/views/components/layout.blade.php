@@ -27,6 +27,7 @@
 
         <x-check-student></x-check-student>
     </div>
+    <x-footer></x-footer>
     <x-students-script></x-students-script>
 </body>
 

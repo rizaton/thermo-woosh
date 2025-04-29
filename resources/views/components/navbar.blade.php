@@ -1,11 +1,11 @@
 <nav class="bg-quiz-light-primary dark:bg-quiz-dark-base-2" x-data="{ isOpen: false }">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-1 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
-                <div class="shrink-0">
+                {{-- <div class="shrink-0">
                     <img class="size-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
                         alt="Your Company">
-                </div>
+                </div> --}}
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <x-nav-link href="/" :active="request()->is('/') ? 'page' : false">Beranda</x-nav-link>
@@ -21,13 +21,21 @@
                     <div class="relative ml-3">
                         <div>
                             <button type="button" @click="isOpen = !isOpen"
-                                class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                class="relative flex max-w-xs items-center rounded-full bg-transparent text-sm border-2 border-transparent hover:border-quiz-light-text dark:hover:border-quiz-dark-text"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                <div class="shrink-0">
+                                    <img class="size-10 rounded-full"
+                                        src="{{ Vite::asset('resources/images/profile.png') }}" alt="Profile">
+                                </div>
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
-                                <img class="size-8 rounded-full" src="{{ Vite::asset('resources/images/profile.png') }}"
-                                    alt="Profile">
-                                <p class="text-white mx-5">Tony Afriza</p>
+                                <div class="px-1.5 pr-10 ml-3 text-left">
+                                    <div class="text-base/5 font-medium text-quiz-light-text dark:text-quiz-dark-text"
+                                        id="studentNameNav">John Doe</div>
+                                    <div class="text-sm font-medium text-quiz-light-text dark:text-quiz-dark-text"
+                                        id="studentClassNav">X.A
+                                    </div>
+                                </div>
                             </button>
                         </div>
 
@@ -49,20 +57,23 @@
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                             tabindex="-1">
                             <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                tabindex="-1" id="user-menu-item-1">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                tabindex="-1" id="user-menu-item-2">Sign out</a>
+                            <button onclick="changeUser()" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                tabindex="-1" id="user-menu-item-0">Ubah data</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="-mr-2 flex md:hidden">
+            <div class="mr-1 w-max @min-xs:gap-5 flex md:hidden items-center">
+                <div class="mt-3 space-y-1 px-1 pb-3 sm:px-2">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <x-nav-link href="/" :active="request()->is('/') ? 'page' : false">Beranda</x-nav-link>
+                    <x-nav-link href="/materi" :active="request()->is('materi') ? 'page' : false">Materi</x-nav-link>
+                    <x-nav-link href="/video" :active="request()->is('video') ? 'page' : false">Video</x-nav-link>
+                    <x-nav-link href="/referensi" :active="request()->is('referensi') ? 'page' : false">Referensi</x-nav-link>
+                </div>
                 <!-- Mobile menu button -->
                 <button type="button" @click="isOpen = !isOpen"
-                    class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    class="h-3/4 relative inline-flex items-center justify-center rounded-md bg-quiz-light-button p-2 text-quiz-light-text hover:bg-quiz-light-button-hover hover:text-quiz-dark-base-2 dark:bg-quiz-dark-button dark:text-quiz-dark-text dark:hover:bg-quiz-dark-button-hover dark:hover:text-quiz-light-base focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     aria-controls="mobile-menu" aria-expanded="false">
                     <span class="absolute -inset-0.5"></span>
                     <span class="sr-only">Open main menu</span>
@@ -86,12 +97,25 @@
 
     <!-- Mobile menu, show/hide based on menu state. -->
     <div x-show="isOpen" class="md:hidden" id="mobile-menu">
-        <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <x-nav-link href="/" :active="request()->is('/') ? 'page' : false">Beranda</x-nav-link>
-            <x-nav-link href="/materi" :active="request()->is('materi') ? 'page' : false">Materi</x-nav-link>
-            <x-nav-link href="/video" :active="request()->is('video') ? 'page' : false">Video</x-nav-link>
-            <x-nav-link href="/referensi" :active="request()->is('referensi') ? 'page' : false">Referensi</x-nav-link>
+        <div class="border-t pb-3 pt-4">
+            <div class="flex items-center px-5">
+                <div class="shrink-0">
+                    <img class="size-10 rounded-full" src="{{ Vite::asset('resources/images/profile.png') }}"
+                        alt="Profile">
+                </div>
+                <div class="ml-3">
+                    <div class="text-base/5 font-medium text-quiz-light-text dark:text-quiz-dark-text"
+                        id="studentNameNav">John Doe</div>
+                    <div class="text-sm font-medium text-quiz-light-button-hover dark:text-quiz-dark-button-hover"
+                        id="studentClassNav">X.A
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 space-y-1 px-2">
+                <button onclick="changeUser()"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-quiz-light-text dark:text-quiz-dark-text dark:hover:bg-quiz-dark-button-hover dark:hover:text-quiz-light-base hover:bg-quiz-light-button-hover hover:text-quiz-dark-base-2">Ubah
+                    data</button>
+            </div>
         </div>
     </div>
 </nav>
