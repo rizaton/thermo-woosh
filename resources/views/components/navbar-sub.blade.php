@@ -1,4 +1,4 @@
-<nav class="bg-gray-800 border-b-black border-2" x-data="{ isOpen: false }">
+<nav class="bg-quiz-light-primary dark:bg-quiz-dark-base-2" x-data="{ isOpen: false }">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
@@ -8,10 +8,10 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <x-nav-link href="/" :active="request()->is('/') ? 'page' : false">Home</x-nav-link>
-                        <x-nav-link href="/posts" :active="request()->is('posts') ? 'page' : false">Posts</x-nav-link>
-                        <x-nav-link href="/about" :active="request()->is('about') ? 'page' : false">About</x-nav-link>
-                        <x-nav-link href="/contact" :active="request()->is('contact') ? 'page' : false">Contact</x-nav-link>
+                        <x-nav-link href="/" :active="request()->is('/') ? 'page' : false">Beranda</x-nav-link>
+                        <x-nav-link href="/materi" :active="request()->is('materi') ? 'page' : false">Materi</x-nav-link>
+                        <x-nav-link href="/video" :active="request()->is('video') ? 'page' : false">Video</x-nav-link>
+                        <x-nav-link href="/referensi" :active="request()->is('referensi') ? 'page' : false">Referensi</x-nav-link>
                     </div>
                 </div>
             </div>
@@ -88,10 +88,11 @@
     <div x-show="isOpen" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <x-nav-link href="/" :active="request()->is('/') ? 'page' : false">Home</x-nav-link>
-            <x-nav-link href="/posts" :active="request()->is('posts') ? 'page' : false">Posts</x-nav-link>
-            <x-nav-link href="/about" :active="request()->is('about') ? 'page' : false">About</x-nav-link>
-            <x-nav-link href="/contact" :active="request()->is('contact') ? 'page' : false">Contact</x-nav-link>
+            <x-nav-link href="/" :active="request()->is('/') ? 'page' : false">Beranda</x-nav-link>
+            <x-nav-link href="/materi" :active="request()->is('materi') ? 'page' : false">Materi</x-nav-link>
+            <x-nav-link href="/video" :active="request()->is('video') ? 'page' : false">Video</x-nav-link>
+            <x-nav-link href="/referensi" :active="request()->is('referensi') ? 'page' : false">Referensi</x-nav-link>
         </div>
     </div>
 </nav>
+{{-- <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3"> --}}

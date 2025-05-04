@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('question_id')->constrained()->onDelete('cascade');
-            $table->string('label'); // A, B, C, D
-            $table->text('text')->nullable();
+            $table->enum('label', ['A', 'B', 'C', 'D', 'E']);
+            $table->string('text')->nullable();
             $table->binary('image')->nullable();
-            $table->boolean('is_correct')->default(false);
+            $table->foreignId('question_id')->constrained(
+                table: 'questions',
+                indexName: 'answer_question_id',
+            )->onDelete('cascade');
             $table->timestamps();
         });
     }

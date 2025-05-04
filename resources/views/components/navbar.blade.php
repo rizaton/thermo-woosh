@@ -31,9 +31,9 @@
                                 <span class="sr-only">Open user menu</span>
                                 <div class="px-1.5 pr-10 ml-3 text-left">
                                     <div class="text-base/5 font-medium text-quiz-light-text dark:text-quiz-dark-text"
-                                        id="studentNameNav">John Doe</div>
+                                        id="studentNameNavLg">Anonim</div>
                                     <div class="text-sm font-medium text-quiz-light-text dark:text-quiz-dark-text"
-                                        id="studentClassNav">X.A
+                                        id="studentClassNavLg">AnonimClass
                                     </div>
                                 </div>
                             </button>
@@ -105,9 +105,9 @@
                 </div>
                 <div class="ml-3">
                     <div class="text-base/5 font-medium text-quiz-light-text dark:text-quiz-dark-text"
-                        id="studentNameNav">John Doe</div>
+                        id="studentNameNavMb">Anonim</div>
                     <div class="text-sm font-medium text-quiz-light-button-hover dark:text-quiz-dark-button-hover"
-                        id="studentClassNav">X.A
+                        id="studentClassNavMb">AnonimClass
                     </div>
                 </div>
             </div>

@@ -14,7 +14,8 @@
 <body class="h-full">
     <div class="min-h-full bg-quiz-light-base dark:bg-quiz-dark-base">
         <x-navbar></x-navbar>
-        @if ($title != 'Beranda')
+        {{-- {{ dd(($page ?? null) != 'isi') }} --}}
+        @if (!($title == 'Beranda' || ($page ?? null) == 'isi'))
             <x-header>{{ $title }}</x-header>
         @endif
         <div class="border-t border-2 border-quiz-light-button dark:border-quiz-dark-button"></div>

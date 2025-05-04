@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('material_id')->constrained()->onDelete('cascade');
+            $table->string('slug')->unique();
+            $table->integer('question_number');
+            $table->enum('question_answer', ['A', 'B', 'C', 'D', 'E']);
             $table->text('question_text');
             $table->binary('question_image')->nullable();
+            $table->foreignId('quiz_id')->constrained(
+                table: 'quizzes',
+                indexName: 'question_quiz_id',
+            )->onDelete('cascade');
             $table->timestamps();
         });
     }

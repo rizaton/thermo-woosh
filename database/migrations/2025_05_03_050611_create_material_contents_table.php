@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('quizzes', function (Blueprint $table) {
+        Schema::create('material_contents', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->unique();
-            $table->string('title');
-            $table->text('description')->nullable();
+            $table->text('content_text')->nullable();
+            $table->binary('content_image')->nullable();
+            $table->string('reference')->nullable();
             $table->foreignId('material_id')->constrained(
                 table: 'materials',
-                indexName: 'quiz_material_id',
+                indexName: 'material_material_content_id',
             )->onDelete('cascade');
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('quizzes');
+        Schema::dropIfExists('material_contents');
     }
 };

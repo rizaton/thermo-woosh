@@ -31,8 +31,10 @@
 
 
     function setStudentNavigation(studentName, studentClass) {
-        document.getElementById("studentNameNav").textContent = studentName;
-        document.getElementById("studentClassNav").textContent = studentClass;
+        document.getElementById("studentNameNavLg").textContent = studentName;
+        document.getElementById("studentClassNavLg").textContent = studentClass;
+        document.getElementById("studentNameNavMb").textContent = studentName;
+        document.getElementById("studentClassNavMb").textContent = studentClass;
     }
 
     document.addEventListener("DOMContentLoaded", () => {
