@@ -15,16 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => Hash::make('password'),
+            'name' => env('ADMIN_ROOT', 'Test User'),
+            'email' => env('ADMIN_EMAIL', 'testuser@example.com'),
+            'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
         ]);
         $this->call([
             MaterialSeeder::class,
             MaterialContentSeeder::class,
+            VideoSeeder::class,
             // QuizSeeder::class,
             // QuestionSeeder::class,
             // AnswerSeeder::class,

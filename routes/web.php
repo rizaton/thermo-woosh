@@ -2,6 +2,7 @@
 
 use App\Models\MaterialContent;
 use App\Models\Material;
+use App\Models\Video;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,7 +25,10 @@ Route::get('/materi/{material:slug}', function (Material $material) {
 });
 
 Route::get('/video', function () {
-    return view('video', ['title' => 'Video Pembelajaran']);
+    return view('video', [
+        'title' => 'Video Pembelajaran',
+        'videos' => Video::all(),
+    ]);
 });
 Route::get('/referensi', function () {
     return view('referensi', ['title' => 'Referensi Pembelajaran']);

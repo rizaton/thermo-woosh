@@ -16,7 +16,7 @@ class MaterialSeeder extends Seeder
     {
         Material::create([
             'title' => 'Konsep Termodinamika',
-            'slug' => Str::slug(fake()->sentence(7)),
+            'slug' => Str::slug('Konsep Termodinamika') . '-' . fake()->randomNumber(8, true),
             'description' => 'Termodinamika adalah cabang fisika yang mempelajari hubungan antara panas, energi, dan kerja dalam suatu sistem.',
         ]);
     }

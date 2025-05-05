@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('content_text')->nullable();
             $table->binary('content_image')->nullable();
             $table->string('reference')->nullable();
+            $table->boolean('hidden')->default(false);
             $table->foreignId('material_id')->constrained(
                 table: 'materials',
                 indexName: 'material_material_content_id',

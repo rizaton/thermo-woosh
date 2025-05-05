@@ -6,7 +6,7 @@
             <article
                 class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                 <header class="mb-4 lg:mb-6 not-format">
-                    <a href="/materi" class="font-medium text-xs text-blue-600 hover:underline">
+                    <a href="/materi" class="font-medium text-xs text-blue-600 dark:text-blue-200 hover:underline">
                         &laquo Kembali ke semua materi
                     </a>
                     <h1
@@ -16,12 +16,12 @@
                 </header>
                 @foreach ($contents as $content)
                     @if ($content->content_text)
-                        <p class="text-justify"> {{ $content->content_text }} </p>
+                        <p class="text-justify text-quiz-light-text dark:text-quiz-dark-text">
+                            {{ $content->content_text }} </p>
                     @endif
                     @if ($content->content_image)
-                        <p>
-                            {{ stream_get_contents($content->content_image) }}
-                        </p>
+                        <img src="data:image/png;base64,{{ htmlspecialchars(pg_unescape_bytea(stream_get_contents($content->content_image))) }}"
+                            alt="image">
                     @endif
                     <br>
                 @endforeach

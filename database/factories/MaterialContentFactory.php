@@ -23,6 +23,8 @@ class MaterialContentFactory extends Factory
             'slug' => Str::slug(fake()->sentence()),
             'content_text' => fake()->text(),
             'content_image' => fake()->image(),
+            'hidden' => fake()->boolean(20),
+            'bold' => fake()->boolean(20),
             'reference' => fake()->sentence(),
             'material_id' => Material::factory(),
         ];

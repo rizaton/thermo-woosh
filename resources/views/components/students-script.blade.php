@@ -74,7 +74,6 @@
             setCookie("studentClass", "AnonimClass");
             setStudentNavigation("Anonim", "AnonimClass");
         }
-        setStudentNavigation(userName, userClass);
         document.getElementById("userModal").classList.add("hidden");
         document.getElementById("userModal").classList.remove("flex");
     });
