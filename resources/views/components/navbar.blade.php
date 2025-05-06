@@ -25,7 +25,8 @@
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <div class="shrink-0">
                                     <img class="size-10 rounded-full"
-                                        src="{{ Vite::asset('resources/images/profile.png') }}" alt="Profile">
+                                        src="data:image/png;base64,{{ htmlspecialchars(pg_unescape_bytea(stream_get_contents(App\Models\Images::all()->find(1)->content))) }}"
+                                        alt="Profile">
                                 </div>
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
@@ -100,7 +101,8 @@
         <div class="border-t pb-3 pt-4">
             <div class="flex items-center px-5">
                 <div class="shrink-0">
-                    <img class="size-10 rounded-full" src="{{ Vite::asset('resources/images/profile.png') }}"
+                    <img class="size-10 rounded-full"
+                        src="data:image/png;base64,{{ htmlspecialchars(pg_unescape_bytea(stream_get_contents(App\Models\Images::all()->find(1)->content))) }}"
                         alt="Profile">
                 </div>
                 <div class="ml-3">

@@ -31,8 +31,9 @@
             </div>
             {{-- HERO IMAGE --}}
             <div class="flex justify-center lg:justify-end lg:col-span-4">
-                <img src="{{ Vite::asset('resources/images/no-bg-landing-hero.png') }}" alt="landing-image"
-                    class="w-72 md:w-80 lg:w-96 aspect-square">
+                {{-- {{ dd(htmlspecialchars(pg_unescape_bytea(stream_get_contents(App\Models\Images::all()->find(2)->content)))) }} --}}
+                <img src="data:image/png;base64,{{ htmlspecialchars(pg_unescape_bytea(stream_get_contents(App\Models\Images::all()->find(2)->content))) }}"
+                    alt="landing-image" class="w-72 md:w-80 lg:w-96 aspect-square">
             </div>
 
         </div>

@@ -34,7 +34,7 @@ class MaterialContentSeeder extends Seeder
         ]);
         MaterialContent::create([
             'slug' => Str::slug(fake()->sentence()),
-            'content_image' => base64_encode(File::get(database_path('seeders/images/konsep/konsep_temodinamika.png'))),
+            'content_image' => base64_encode(File::get(database_path('seeders/images/konsep/konsep_termodinamika.png'))),
             'material_id' => Material::all()->find(1)->id,
         ]);
     }
