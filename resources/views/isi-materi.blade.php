@@ -15,15 +15,46 @@
                     </h1>
                 </header>
                 @foreach ($contents as $content)
-                    @if ($content->content_text)
-                        <p class="text-justify text-quiz-light-text dark:text-quiz-dark-text">
-                            {{ $content->content_text }} </p>
+                    @if ($content->is_hidden)
+                        <div x-data="{ show: false }" class="mb-4">
+                            <button @click="show = !show"
+                                class="text-blue-600 dark:text-blue-300 hover:underline text-sm mb-2"
+                                x-text="show ? 'Sembunyikan' : 'Lihat Isi'"></button>
+
+                            <div x-show="show" x-transition>
+                                @if ($content->content_text)
+                                    <p class="text-justify text-quiz-light-text dark:text-quiz-dark-text">
+                                        {!! nl2br(e($content->content_text)) !!}
+                                    </p>
+                                @endif
+
+                                @if ($content->content_image)
+                                    <div class="flex justify-center w-full max-w-3xl">
+                                        <img src="data:image/png;base64,{{ $content->content_image }}" alt="image">
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    @else
+                        @if ($content->content_text)
+                            @if ($content->is_title)
+                                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 pt-11">
+                                    {{ $content->content_text }}
+                                </h2>
+                            @else
+                                <p class="text-justify text-quiz-light-text dark:text-quiz-dark-text">
+                                    {!! nl2br(e($content->content_text)) !!}
+                                </p>
+                            @endif
+                        @endif
+
+                        @if ($content->content_image)
+                            <div class="flex justify-center w-full max-w-3xl">
+                                <img src="data:image/png;base64,{{ $content->content_image }}" alt="image">
+                            </div>
+                        @endif
+                        <br>
                     @endif
-                    @if ($content->content_image)
-                        <img src="data:image/png;base64,{{ htmlspecialchars(pg_unescape_bytea(stream_get_contents($content->content_image))) }}"
-                            alt="image">
-                    @endif
-                    <br>
                 @endforeach
             </article>
         </div>

@@ -24,8 +24,7 @@
                                 class="relative flex max-w-xs items-center rounded-full bg-transparent text-sm border-2 border-transparent hover:border-quiz-light-text dark:hover:border-quiz-dark-text"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <div class="shrink-0">
-                                    <img class="size-10 rounded-full"
-                                        src="{{ Vite::asset('resources/images/profile.png') }}" alt="Profile">
+                                    <img class="size-10 rounded-full" src="/images/profile.png" alt="Profile">
                                 </div>
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
@@ -100,8 +99,7 @@
         <div class="border-t pb-3 pt-4">
             <div class="flex items-center px-5">
                 <div class="shrink-0">
-                    <img class="size-10 rounded-full" src="{{ Vite::asset('resources/images/profile.png') }}"
-                        alt="Profile">
+                    <img class="size-10 rounded-full" src="/images/profile.png" alt="Profile">
                 </div>
                 <div class="ml-3">
                     <div class="text-base/5 font-medium text-quiz-light-text dark:text-quiz-dark-text"

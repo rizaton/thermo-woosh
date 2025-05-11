@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,15 +16,18 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->text('content_text')->nullable();
-            $table->binary('content_image')->nullable();
+            // $table->binary('content_image', 255)->nullable();
             $table->string('reference')->nullable();
-            $table->boolean('hidden')->default(false);
+            $table->boolean('is_title')->default(false);
+            $table->boolean('is_hidden')->default(false);
+            $table->boolean('is_list')->default(false);
             $table->foreignId('material_id')->constrained(
                 table: 'materials',
                 indexName: 'material_material_content_id',
             )->onDelete('cascade');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE material_contents ADD content_image MEDIUMBLOB NULL");
     }
 
     /**

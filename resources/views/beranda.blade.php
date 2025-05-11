@@ -31,8 +31,7 @@
             </div>
             {{-- HERO IMAGE --}}
             <div class="flex justify-center lg:justify-end lg:col-span-4">
-                <img src="{{ Vite::asset('resources/images/no-bg-landing-hero.png') }}" alt="landing-image"
-                    class="w-72 md:w-80 lg:w-96 aspect-square">
+                <img src="images/landing.png" alt="landing-image" class="w-72 md:w-80 lg:w-96 aspect-square">
             </div>
 
         </div>
