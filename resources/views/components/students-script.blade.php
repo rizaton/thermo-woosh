@@ -71,8 +71,8 @@
 
         if (!userName && !userClass) {
             setCookie("studentName", "Anonim");
-            setCookie("studentClass", "AnonimClass");
-            setStudentNavigation("Anonim", "AnonimClass");
+            setCookie("studentClass", "Tidak ada kelas");
+            setStudentNavigation("Anonim", "Tidak ada kelas");
         }
         document.getElementById("userModal").classList.add("hidden");
         document.getElementById("userModal").classList.remove("flex");
