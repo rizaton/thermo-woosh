@@ -7,7 +7,7 @@
             {{-- HERO TEXT --}}
             <div class="text-left w-32 md:w-max lg:text-left lg:col-span-6">
                 <h1
-                    class="max-w-2xl mb-2 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-quiz-light-text dark:text-quiz-dark-text">
+                    class="max-w-2xl mb-2 lg:mb-10 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-quiz-light-text dark:text-quiz-dark-text">
                     ThermoWoosh
                 </h1>
                 <h2
@@ -15,8 +15,7 @@
                     Serunya Belajar Termodinamika!
                 </h2>
                 <p class="max-w-2xl mb-4 font-light text-quiz-light-text dark:text-quiz-dark-text md:text-lg lg:text-xl">
-                    Website interaktif fisika <br>
-                    Discovery Learning
+                    Website interaktif fisika
                 </p>
                 <a href="/materi"
                     class="inline-flex items-center justify-center px-5 py-3 mb-4 text-base font-medium text-center bg-quiz-light-button-hover border-2 dark:bg-quiz-dark-button text-quiz-light-text border-quiz-light-text rounded-lg hover:bg-quiz-light-button focus:ring-4 focus:ring-quiz-light-text dark:text-quiz-dark-text dark:border-quiz-dark-text dark:hover:bg-gray-700 dark:focus:ring-gray-800">

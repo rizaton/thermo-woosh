@@ -6,7 +6,7 @@
                 @foreach ($videos as $index => $video)
                     <div id="video{{ $index }}"
                         class="flex flex-col lg:flex-row lg:gap-4 gap-2 w-full max-w-2xl mx-auto">
-                        <iframe src="{{ $video->url }}" class="lg:aspect-video rounded-md"
+                        <iframe src="{{ $video->url }}" class="rounded-md"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <div class="flex flex-col gap-3">

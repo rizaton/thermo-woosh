@@ -31,7 +31,10 @@ Route::get('/video', function () {
     ]);
 });
 Route::get('/referensi', function () {
-    return view('referensi', ['title' => 'Referensi Pembelajaran']);
+    return view('referensi', [
+        'title' => 'Referensi Pembelajaran',
+        'references' => Video::all(),
+    ]);
 });
 Route::get('/kuis', function () {
     return view('kuis', ['title' => 'Kuis']);
